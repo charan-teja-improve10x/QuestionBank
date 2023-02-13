@@ -16,28 +16,39 @@ public class QuestionsActivity extends AppCompatActivity {
     RadioButton optionTwoRb;
     RadioButton optionThreeRb;
     RadioButton optionFourRb;
+    String question;
+    String optionA;
+    String optionB;
+    String optionC;
+    String optionD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
-        handleInitViews();
-        Intent intent = getIntent();
-        String question = intent.getStringExtra("question");
-        String optionA = intent.getStringExtra("optioon1");
-        String optionB = intent.getStringExtra("optioon2");
-        String optionC = intent.getStringExtra("optioon3");
-        String optionD = intent.getStringExtra("optioon4");
+        initViews();
+        getQuestions();
+        displayQuestions();
+    }
+
+    private void displayQuestions() {
         questionTxt.setText(question);
         optionOneRb.setText(optionA);
         optionTwoRb.setText(optionB);
         optionThreeRb.setText(optionC);
         optionFourRb.setText(optionD);
-
-
     }
 
-    private void handleInitViews() {
+    private void getQuestions() {
+        Intent intent = getIntent();
+        question = intent.getStringExtra("question");
+        optionA = intent.getStringExtra("optionA");
+        optionB = intent.getStringExtra("optionB");
+        optionC = intent.getStringExtra("optionC");
+        optionD = intent.getStringExtra("optionD");
+    }
+
+    private void initViews() {
         questionTxt = findViewById(R.id.question_txt);
         optionsRg = findViewById(R.id.options_rg);
         optionOneRb = findViewById(R.id.option_one_rb);

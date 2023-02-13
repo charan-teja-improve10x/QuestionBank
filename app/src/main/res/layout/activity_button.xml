@@ -31,4 +31,28 @@
         android:layout_margin="4dp"
         android:text="Question 3"
         android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/check_box_one_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="check box one"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/check_box_two_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="check box two"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/check_box_three_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="check box three"
+        android:textAllCaps="false" />
 </LinearLayout>
