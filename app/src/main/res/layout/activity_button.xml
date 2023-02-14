@@ -33,26 +33,26 @@
         android:textAllCaps="false" />
 
     <Button
-        android:id="@+id/check_box_one_btn"
+        android:id="@+id/question_four_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:text="check box one"
+        android:text="question  4"
         android:textAllCaps="false" />
 
     <Button
-        android:id="@+id/check_box_two_btn"
+        android:id="@+id/question_five_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:text="check box two"
+        android:text="question 5"
         android:textAllCaps="false" />
 
     <Button
-        android:id="@+id/check_box_three_btn"
+        android:id="@+id/question_six_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:text="check box three"
+        android:text="question 6"
         android:textAllCaps="false" />
 </LinearLayout>
