@@ -101,7 +101,7 @@ public class ButtonActivity extends AppCompatActivity {
     }
 
     public void navigateToQuestionsActivity(String question, String optionA, String optionB, String optionC, String optionD,String answer) {
-        Intent questionsIntent = new Intent(this, QuestionsActivity.class);
+        Intent questionsIntent = new Intent(this, RadioButtonActivity.class);
         questionsIntent.putExtra("question", question);
         questionsIntent.putExtra("optionA", optionA);
         questionsIntent.putExtra("optionB", optionB);
@@ -120,7 +120,7 @@ public class ButtonActivity extends AppCompatActivity {
         questionsixBtn= findViewById(R.id.question_six_btn);
     }
     public void navigateToQuestionAndAnswersActivity(String question, String optionA, String optionB,String optionC, String optionD, String answer){
-        Intent questionAndAnswerActivityIntent = new Intent(this,QuestionAndAnswerActivity.class);
+        Intent questionAndAnswerActivityIntent = new Intent(this, CheckBoxActivity.class);
         questionAndAnswerActivityIntent.putExtra("question",question);
         questionAndAnswerActivityIntent.putExtra("optionA", optionA);
         questionAndAnswerActivityIntent.putExtra("optionB", optionB);

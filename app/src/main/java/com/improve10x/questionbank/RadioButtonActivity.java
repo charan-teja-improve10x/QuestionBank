@@ -5,16 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.CheckBox;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class QuestionAndAnswerActivity extends AppCompatActivity {
+public class RadioButtonActivity extends AppCompatActivity implements IQuestionsActivity {
     TextView questionTxt;
-    CheckBox optionOneCb;
-    CheckBox optionTwoCb;
-    CheckBox optionThreeCb;
-    CheckBox optionFourCb;
+    RadioGroup optionsRg;
+    RadioButton optionOneRb;
+    RadioButton optionTwoRb;
+    RadioButton optionThreeRb;
+    RadioButton optionFourRb;
     Button verifyBtn;
     String question;
     String optionA;
@@ -23,26 +25,26 @@ public class QuestionAndAnswerActivity extends AppCompatActivity {
     String optionD;
     String answer;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question_and_answer);
+        setContentView(R.layout.activity_radio_button);
         initViews();
-        getQuestionsDetails();
-        displayQuestion();
+        getQuestions();
+        displayQuestions();
         handleVerifyBtn();
     }
 
-    private void handleVerifyBtn() {
+    @Override
+    public void handleVerifyBtn() {
         verifyBtn.setOnClickListener(v -> {
             verifyAnswer();
         });
     }
 
+    @Override
     public void verifyAnswer() {
-
-        String correctAnswer = selectedAnswer();
+        String correctAnswer = getSelectedOptions();
         if (answer.equals(correctAnswer)) {
             Toast.makeText(this, "Correct Answer", Toast.LENGTH_SHORT).show();
         } else {
@@ -50,33 +52,33 @@ public class QuestionAndAnswerActivity extends AppCompatActivity {
         }
     }
 
-    public String selectedAnswer() {
-        boolean selectedOption1 = optionOneCb.isChecked();
-        boolean selectedOption2 = optionTwoCb.isChecked();
-        boolean selectedOption3 = optionThreeCb.isChecked();
-        boolean selectedOption4 = optionFourCb.isChecked();
-        String result = " ";
-        if (selectedOption1 == true) {
+    @Override
+    public String getSelectedOptions() {
+        int selectedOption = optionsRg.getCheckedRadioButtonId();
+        String result = "";
+        if (selectedOption == R.id.option_one_rb) {
             result = "a";
-        } else if (selectedOption2 == true) {
+        } else if (selectedOption == R.id.option_two_rb) {
             result = "b";
-        } else if (selectedOption3 == true) {
+        } else if (selectedOption == R.id.option_three_rb) {
             result = "c";
-        } else if (selectedOption4 == true) {
+        } else if (selectedOption == R.id.option_four_rb) {
             result = "d";
         }
         return result;
     }
 
-    private void displayQuestion() {
+    @Override
+    public void displayQuestions() {
         questionTxt.setText(question);
-        optionOneCb.setText(optionA);
-        optionTwoCb.setText(optionB);
-        optionThreeCb.setText(optionC);
-        optionFourCb.setText(optionD);
+        optionOneRb.setText(optionA);
+        optionTwoRb.setText(optionB);
+        optionThreeRb.setText(optionC);
+        optionFourRb.setText(optionD);
     }
 
-    private void getQuestionsDetails() {
+    @Override
+    public void getQuestions() {
         Intent intent = getIntent();
         question = intent.getStringExtra("question");
         optionA = intent.getStringExtra("optionA");
@@ -87,11 +89,12 @@ public class QuestionAndAnswerActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        questionTxt = findViewById(R.id.question_cb_txt);
-        optionOneCb = findViewById(R.id.option_one_cb);
-        optionTwoCb = findViewById(R.id.option_two_cb);
-        optionThreeCb = findViewById(R.id.option_three_cb);
-        optionFourCb = findViewById(R.id.option_four_cb);
+        questionTxt = findViewById(R.id.question_txt);
+        optionsRg = findViewById(R.id.options_rg);
+        optionOneRb = findViewById(R.id.option_one_rb);
+        optionTwoRb = findViewById(R.id.option_two_rb);
+        optionThreeRb = findViewById(R.id.option_three_rb);
+        optionFourRb = findViewById(R.id.option_four_rb);
         verifyBtn = findViewById(R.id.verify_btn);
     }
 }
