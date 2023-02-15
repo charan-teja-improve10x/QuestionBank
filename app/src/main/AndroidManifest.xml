@@ -13,14 +13,35 @@
         android:theme="@style/Theme.QuestionBank"
         tools:targetApi="31">
         <activity
-            android:name=".CheckBoxActivity"
+            android:name=".TextQuestionActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".RadioButtonActivity"
+            android:name=".NumberSelectQuestionActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TrueOrFalseQuestionActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MultiSelectActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SingleSelectActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

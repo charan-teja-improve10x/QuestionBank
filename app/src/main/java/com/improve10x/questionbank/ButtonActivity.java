@@ -13,6 +13,9 @@ public class ButtonActivity extends AppCompatActivity {
     Button questionFourBtn;
     Button questionFiveBtn;
     Button questionsixBtn;
+    Button questionSevenBtn;
+    Button questionEightBtn;
+    Button questionNineBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,33 @@ public class ButtonActivity extends AppCompatActivity {
         handleQuestion4Btn();
         handleQuestion5Btn();
         handleQuestion6Btn();
+        handleQuestion7Btn();
+        handleQuestion8Btn();
+        handleQuestion9Btn();
+    }
+
+    private void handleQuestion9Btn() {
+        questionNineBtn.setOnClickListener(v -> {
+            String question = "Android emulator takes very less space ";
+            String answer = "False";
+            navigateToTrueOrFalseActivity(question, answer);
+        });
+    }
+
+    private void handleQuestion8Btn() {
+        questionEightBtn.setOnClickListener(v -> {
+         String question = "Android  studio supports hava programing language";
+         String answer = "True";
+         navigateToTrueOrFalseActivity(question,answer);
+        });
+    }
+
+    private void handleQuestion7Btn() {
+        questionSevenBtn.setOnClickListener(v -> {
+            String question = "Java is a programing language ?";
+            String answer = "True";
+            navigateToTrueOrFalseActivity(question, answer);
+        });
     }
 
     private void handleQuestion6Btn() {
@@ -101,7 +131,7 @@ public class ButtonActivity extends AppCompatActivity {
     }
 
     public void navigateToQuestionsActivity(String question, String optionA, String optionB, String optionC, String optionD,String answer) {
-        Intent questionsIntent = new Intent(this, RadioButtonActivity.class);
+        Intent questionsIntent = new Intent(this, SingleSelectActivity.class);
         questionsIntent.putExtra("question", question);
         questionsIntent.putExtra("optionA", optionA);
         questionsIntent.putExtra("optionB", optionB);
@@ -118,9 +148,12 @@ public class ButtonActivity extends AppCompatActivity {
         questionFourBtn = findViewById(R.id.question_four_btn);
         questionFiveBtn = findViewById(R.id.question_five_btn);
         questionsixBtn= findViewById(R.id.question_six_btn);
+        questionSevenBtn = findViewById(R.id.question_seven_btn);
+        questionEightBtn = findViewById(R.id.question_eight_btn);
+        questionNineBtn = findViewById(R.id.question_nine_btn);
     }
     public void navigateToQuestionAndAnswersActivity(String question, String optionA, String optionB,String optionC, String optionD, String answer){
-        Intent questionAndAnswerActivityIntent = new Intent(this, CheckBoxActivity.class);
+        Intent questionAndAnswerActivityIntent = new Intent(this, MultiSelectActivity.class);
         questionAndAnswerActivityIntent.putExtra("question",question);
         questionAndAnswerActivityIntent.putExtra("optionA", optionA);
         questionAndAnswerActivityIntent.putExtra("optionB", optionB);
@@ -128,5 +161,11 @@ public class ButtonActivity extends AppCompatActivity {
         questionAndAnswerActivityIntent.putExtra("optionD", optionD);
         questionAndAnswerActivityIntent.putExtra("answer",answer);
         startActivity(questionAndAnswerActivityIntent);
+    }
+    public void navigateToTrueOrFalseActivity(String question, String answer){
+        Intent trueOrFalseIntent = new Intent(this,TrueOrFalseQuestionActivity.class);
+        trueOrFalseIntent.putExtra("question",question);
+        trueOrFalseIntent.putExtra("answer", answer);
+        startActivity(trueOrFalseIntent);
     }
 }

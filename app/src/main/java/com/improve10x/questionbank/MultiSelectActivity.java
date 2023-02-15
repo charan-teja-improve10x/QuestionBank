@@ -9,7 +9,7 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class CheckBoxActivity   extends AppCompatActivity implements IQuestionsActivity {
+public class MultiSelectActivity extends AppCompatActivity implements IQuestionsActivity {
     TextView questionTxt;
     CheckBox optionOneCb;
     CheckBox optionTwoCb;
@@ -26,7 +26,7 @@ public class CheckBoxActivity   extends AppCompatActivity implements IQuestionsA
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_check_box);
+        setContentView(R.layout.activity_multi_select);
         initViews();
         getQuestions();
         displayQuestions();

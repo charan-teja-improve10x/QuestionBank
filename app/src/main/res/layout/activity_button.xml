@@ -1,58 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="16dp"
-    android:orientation="vertical"
-    tools:context=".ButtonActivity">
+    android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/question_one_btn"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:text="Question 1"
-        android:textAllCaps="false" />
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        tools:context=".ButtonActivity">
 
-    <Button
-        android:id="@+id/question_two_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:text="Question 2"
-        android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/question_three_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:text="Question 3"
-        android:textAllCaps="false" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
 
-    <Button
-        android:id="@+id/question_four_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:text="question  4"
-        android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/question_five_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:text="question 5"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/question_one_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Question 1"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/question_six_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:text="question 6"
-        android:textAllCaps="false" />
-</LinearLayout>
+        <Button
+            android:id="@+id/question_two_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Question 2"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/question_three_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Question 3"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/question_four_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Question  4"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/question_five_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Question 5"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/question_six_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Question 6"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/question_seven_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Question 7"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/question_eight_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Question 8"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/question_nine_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Question 9"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/question_ten_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Question 10"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/question_eleven_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Question 11"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/question_twelve_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Question 12"
+            android:textAllCaps="false" />
+    </LinearLayout>
+</ScrollView>

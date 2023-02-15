@@ -10,7 +10,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class RadioButtonActivity extends AppCompatActivity implements IQuestionsActivity {
+public class SingleSelectActivity extends AppCompatActivity implements IQuestionsActivity {
     TextView questionTxt;
     RadioGroup optionsRg;
     RadioButton optionOneRb;
@@ -28,7 +28,7 @@ public class RadioButtonActivity extends AppCompatActivity implements IQuestions
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_radio_button);
+        setContentView(R.layout.activity_single_select);
         initViews();
         getQuestions();
         displayQuestions();
