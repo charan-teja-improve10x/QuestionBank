@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:max="10"
-        android:progress="3" />
+        android:progress="4" />
 
     <Button
         android:id="@+id/verify_sb_btn"
