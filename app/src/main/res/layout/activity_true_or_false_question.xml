@@ -28,13 +28,13 @@
         android:layout_height="wrap_content">
 
         <RadioButton
-            android:id="@+id/option_a_rb"
+            android:id="@+id/true_rb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="True" />
 
         <RadioButton
-            android:id="@+id/option_b_rb"
+            android:id="@+id/false_rb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="False" />

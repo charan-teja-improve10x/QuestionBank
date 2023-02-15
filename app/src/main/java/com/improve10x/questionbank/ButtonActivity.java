@@ -12,10 +12,13 @@ public class ButtonActivity extends AppCompatActivity {
     Button questionThreeBtn;
     Button questionFourBtn;
     Button questionFiveBtn;
-    Button questionsixBtn;
-    Button questionSevenBtn;
-    Button questionEightBtn;
-    Button questionNineBtn;
+    Button questionSixBtn;
+    Button trueOrFalse1Btn;
+    Button trueOrFalse2Btn;
+    Button trueOrFalse3Btn;
+    Button numberQuestion1Btn;
+    Button numberQuestion2Btn;
+    Button numberQuestion3Btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +34,35 @@ public class ButtonActivity extends AppCompatActivity {
         handleQuestion7Btn();
         handleQuestion8Btn();
         handleQuestion9Btn();
+        handleNumberQuestion1Btn();
+        handleNumberQuestion2Btn();
+        handleNumberQuestion3Btn();
+    }
+    public void handleNumberQuestion1Btn(){
+        numberQuestion1Btn.setOnClickListener(v -> {
+            String question = "What is the size of int data type in bytes";
+            String answer = "4";
+            navigateToNumberSelectActivity(question, answer);
+        });
+    }
+
+    public void handleNumberQuestion2Btn(){
+        numberQuestion2Btn.setOnClickListener(v -> {
+            String question = "What is the size of long data type in bytes";
+            String answer = "8";
+            navigateToNumberSelectActivity(question, answer);
+        });
+    }
+    public void handleNumberQuestion3Btn(){
+        numberQuestion3Btn.setOnClickListener(v -> {
+            String question = "What is the size of int data type in bytes";
+            String answer = "4";
+            navigateToNumberSelectActivity(question, answer);
+        });
     }
 
     private void handleQuestion9Btn() {
-        questionNineBtn.setOnClickListener(v -> {
+        trueOrFalse3Btn.setOnClickListener(v -> {
             String question = "Android emulator takes very less space ";
             String answer = "False";
             navigateToTrueOrFalseActivity(question, answer);
@@ -42,15 +70,15 @@ public class ButtonActivity extends AppCompatActivity {
     }
 
     private void handleQuestion8Btn() {
-        questionEightBtn.setOnClickListener(v -> {
-         String question = "Android  studio supports hava programing language";
-         String answer = "True";
-         navigateToTrueOrFalseActivity(question,answer);
+        trueOrFalse2Btn.setOnClickListener(v -> {
+            String question = "Android  studio supports hava programing language";
+            String answer = "True";
+            navigateToTrueOrFalseActivity(question, answer);
         });
     }
 
     private void handleQuestion7Btn() {
-        questionSevenBtn.setOnClickListener(v -> {
+        trueOrFalse1Btn.setOnClickListener(v -> {
             String question = "Java is a programing language ?";
             String answer = "True";
             navigateToTrueOrFalseActivity(question, answer);
@@ -58,15 +86,15 @@ public class ButtonActivity extends AppCompatActivity {
     }
 
     private void handleQuestion6Btn() {
-       questionsixBtn.setOnClickListener(v -> {
-           String question = "Select activity lifecycle methods in Android";
-           String optionA = "onCreate";
-           String optionB = "onStop";
-           String optionC = "onResume";
-           String optionD = "onPause";
-           String answer = "abcd";
-           navigateToQuestionAndAnswersActivity(question,optionA,optionB, optionC, optionD, answer);
-       });
+        questionSixBtn.setOnClickListener(v -> {
+            String question = "Select activity lifecycle methods in Android";
+            String optionA = "onCreate";
+            String optionB = "onStop";
+            String optionC = "onResume";
+            String optionD = "onPause";
+            String answer = "abcd";
+            navigateToQuestionAndAnswersActivity(question, optionA, optionB, optionC, optionD, answer);
+        });
     }
 
     private void handleQuestion5Btn() {
@@ -77,7 +105,7 @@ public class ButtonActivity extends AppCompatActivity {
             String optionC = "Monitor";
             String optionD = "Keyboard";
             String answer = "bcd";
-            navigateToQuestionAndAnswersActivity(question,optionA,optionB, optionC, optionD, answer);
+            navigateToQuestionAndAnswersActivity(question, optionA, optionB, optionC, optionD, answer);
         });
     }
 
@@ -89,7 +117,7 @@ public class ButtonActivity extends AppCompatActivity {
             String optionC = "Moon";
             String optionD = "Jupiter";
             String answer = "ad";
-            navigateToQuestionAndAnswersActivity(question,optionA,optionB, optionC, optionD, answer);
+            navigateToQuestionAndAnswersActivity(question, optionA, optionB, optionC, optionD, answer);
         });
     }
 
@@ -101,7 +129,7 @@ public class ButtonActivity extends AppCompatActivity {
             String optionC = "Non of above";
             String optionD = "Both a and b";
             String answer = "a";
-            navigateToQuestionsActivity(question, optionA, optionB, optionC, optionD,answer);
+            navigateToQuestionsActivity(question, optionA, optionB, optionC, optionD, answer);
         });
     }
 
@@ -114,7 +142,7 @@ public class ButtonActivity extends AppCompatActivity {
             String optionC = "FizzBuzz";
             String optionD = "6";
             String answer = "a";
-            navigateToQuestionsActivity(question, optionA, optionB, optionC, optionD,answer);
+            navigateToQuestionsActivity(question, optionA, optionB, optionC, optionD, answer);
         });
     }
 
@@ -126,18 +154,18 @@ public class ButtonActivity extends AppCompatActivity {
             String optionC = " 12 ";
             String optionD = " 8 ";
             String answer = "d";
-            navigateToQuestionsActivity(question1, optionA, optionB, optionC, optionD,answer);
+            navigateToQuestionsActivity(question1, optionA, optionB, optionC, optionD, answer);
         });
     }
 
-    public void navigateToQuestionsActivity(String question, String optionA, String optionB, String optionC, String optionD,String answer) {
+    public void navigateToQuestionsActivity(String question, String optionA, String optionB, String optionC, String optionD, String answer) {
         Intent questionsIntent = new Intent(this, SingleSelectActivity.class);
         questionsIntent.putExtra("question", question);
         questionsIntent.putExtra("optionA", optionA);
         questionsIntent.putExtra("optionB", optionB);
         questionsIntent.putExtra("optionC", optionC);
         questionsIntent.putExtra("optionD", optionD);
-        questionsIntent.putExtra("answer",answer);
+        questionsIntent.putExtra("answer", answer);
         startActivity(questionsIntent);
     }
 
@@ -147,25 +175,37 @@ public class ButtonActivity extends AppCompatActivity {
         questionThreeBtn = findViewById(R.id.question_three_btn);
         questionFourBtn = findViewById(R.id.question_four_btn);
         questionFiveBtn = findViewById(R.id.question_five_btn);
-        questionsixBtn= findViewById(R.id.question_six_btn);
-        questionSevenBtn = findViewById(R.id.question_seven_btn);
-        questionEightBtn = findViewById(R.id.question_eight_btn);
-        questionNineBtn = findViewById(R.id.question_nine_btn);
+        questionSixBtn = findViewById(R.id.question_six_btn);
+        trueOrFalse1Btn = findViewById(R.id.true_false_1_btn);
+        trueOrFalse2Btn = findViewById(R.id.true_false_2_btn);
+        trueOrFalse3Btn = findViewById(R.id.true_false_3_btn);
+        numberQuestion1Btn = findViewById(R.id.number_question_1_btn);
+        numberQuestion2Btn = findViewById(R.id.number_question_2_btn);
+        numberQuestion3Btn = findViewById(R.id.number_question_3_btn);
     }
-    public void navigateToQuestionAndAnswersActivity(String question, String optionA, String optionB,String optionC, String optionD, String answer){
+
+    public void navigateToQuestionAndAnswersActivity(String question, String optionA, String optionB, String optionC, String optionD, String answer) {
         Intent questionAndAnswerActivityIntent = new Intent(this, MultiSelectActivity.class);
-        questionAndAnswerActivityIntent.putExtra("question",question);
+        questionAndAnswerActivityIntent.putExtra("question", question);
         questionAndAnswerActivityIntent.putExtra("optionA", optionA);
         questionAndAnswerActivityIntent.putExtra("optionB", optionB);
-        questionAndAnswerActivityIntent.putExtra("optionC",optionC);
+        questionAndAnswerActivityIntent.putExtra("optionC", optionC);
         questionAndAnswerActivityIntent.putExtra("optionD", optionD);
-        questionAndAnswerActivityIntent.putExtra("answer",answer);
+        questionAndAnswerActivityIntent.putExtra("answer", answer);
         startActivity(questionAndAnswerActivityIntent);
     }
-    public void navigateToTrueOrFalseActivity(String question, String answer){
-        Intent trueOrFalseIntent = new Intent(this,TrueOrFalseQuestionActivity.class);
-        trueOrFalseIntent.putExtra("question",question);
+
+    public void navigateToTrueOrFalseActivity(String question, String answer) {
+        Intent trueOrFalseIntent = new Intent(this, TrueOrFalseQuestionActivity.class);
+        trueOrFalseIntent.putExtra("question", question);
         trueOrFalseIntent.putExtra("answer", answer);
         startActivity(trueOrFalseIntent);
+    }
+
+    public void navigateToNumberSelectActivity(String question, String answer){
+        Intent numberSelectIntent = new Intent(this, NumberSelectQuestionActivity.class);
+        numberSelectIntent.putExtra("question", question);
+        numberSelectIntent.putExtra("answer", answer);
+        startActivity(numberSelectIntent);
     }
 }

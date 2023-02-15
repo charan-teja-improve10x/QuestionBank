@@ -10,14 +10,15 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class TrueOrFalseQuestionActivity extends AppCompatActivity implements IQuestionsActivity{
-          TextView trueOrFalseTxt;
-          Button verifyTrueBtn;
-          RadioGroup trueFalseRg;
-          RadioButton optionARb;
-          RadioButton optionBRb;
-          String question;
-          String answer;
+public class TrueOrFalseQuestionActivity extends AppCompatActivity implements IQuestionsActivity {
+    TextView trueOrFalseTxt;
+    Button verifyTrueBtn;
+    RadioGroup trueFalseRg;
+    RadioButton trueRb;
+    RadioButton falseRb;
+    String question;
+    String answer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,50 +32,45 @@ public class TrueOrFalseQuestionActivity extends AppCompatActivity implements IQ
     public void initViews() {
         trueOrFalseTxt = findViewById(R.id.true_or_false_txt);
         trueFalseRg = findViewById(R.id.true_false_rg);
-        optionARb = findViewById(R.id.option_a_rb);
-        optionBRb = findViewById(R.id.option_b_rb);
+        trueRb = findViewById(R.id.true_rb);
+        falseRb = findViewById(R.id.false_rb);
         verifyTrueBtn = findViewById(R.id.verify_true_btn);
     }
 
     @Override
     public void handleVerifyBtn() {
-      verifyTrueBtn.setOnClickListener(v -> {
-          verifyAnswer();
-      });
+        verifyTrueBtn.setOnClickListener(v -> {
+            verifyAnswer();
+        });
     }
 
     @Override
     public void verifyAnswer() {
-String correctAnswer = getSelectedOptions();
-if (answer.equals(correctAnswer)){
-    Toast.makeText(this, "Correct Answer", Toast.LENGTH_SHORT).show();
-}else {
-    Toast.makeText(this, "Sorry, Wrong Answer", Toast.LENGTH_SHORT).show();
-}
+        String correctAnswer = getSelectedOptions();
+        if (answer.equalsIgnoreCase(correctAnswer)) {
+            Toast.makeText(this, "Correct Answer", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Sorry, Wrong Answer", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
     public String getSelectedOptions() {
-        int selectedOption = trueFalseRg.getCheckedRadioButtonId();
-        String result = " ";
-        if (selectedOption == R.id.option_a_rb){
-            result = "True";
-        }else if (selectedOption == R.id.option_b_rb){
-            result = "False";
-        }
-        return  result;
+        int selectedId = trueFalseRg.getCheckedRadioButtonId();
+        RadioButton selectedRb = findViewById(selectedId);
+        String result = selectedRb.getText().toString();
+        return result;
     }
 
     @Override
     public void displayQuestions() {
-       trueOrFalseTxt.setText(question);
+        trueOrFalseTxt.setText(question);
     }
 
     @Override
     public void getQuestions() {
-        Intent  intent = getIntent();
+        Intent intent = getIntent();
         question = intent.getStringExtra("question");
         answer = intent.getStringExtra("answer");
     }
-
 }

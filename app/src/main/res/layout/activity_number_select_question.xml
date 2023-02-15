@@ -9,17 +9,20 @@
     tools:context=".NumberSelectQuestionActivity">
 
     <TextView
+        android:id="@+id/seek_bar_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="please select the number in seek bar progress"
         android:textSize="16sp"
         android:textStyle="bold" />
 
     <SeekBar
-        android:id="@+id/music_sb"
+        android:id="@+id/order_info_sb"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp" />
+        android:layout_margin="8dp"
+        android:max="10"
+        android:progress="3" />
 
     <Button
         android:id="@+id/verify_sb_btn"
