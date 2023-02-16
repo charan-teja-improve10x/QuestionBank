@@ -44,7 +44,8 @@ public class ButtonActivity extends AppCompatActivity {
         handleTextQuestion2Btn();
         handleTextQuestion3Btn();
     }
-    public void handleTextQuestion1Btn(){
+
+    public void handleTextQuestion1Btn() {
         fillInBlank1Btn.setOnClickListener(v -> {
             String question = "Java _______ can contain variables and methods";
             String answer = "Class";
@@ -52,26 +53,30 @@ public class ButtonActivity extends AppCompatActivity {
         });
     }
 
-    public void handleTextQuestion2Btn(){
+    public void handleTextQuestion2Btn() {
         fillInBlank2Btn.setOnClickListener(v -> {
             String question = "Android is an _________________";
             String answer = "Operating System";
-            navigateToTextQuestionActivity(question, answer);
+            String trimmedTxt = answer.trim();
+            navigateToTextQuestionActivity(question, trimmedTxt);
         });
     }
 
-public void handleTextQuestion3Btn(){
+    public void handleTextQuestion3Btn() {
         fillInBlank3Btn.setOnClickListener(v -> {
             String question = "____________ component is used to supper vertical Scrolling";
             String answer = "Scrollview";
-            navigateToTextQuestionActivity(question, answer);
+            String trimmedTxt = answer.trim();
+            navigateToTextQuestionActivity(question, trimmedTxt);
         });
-}
+    }
+
     public void handleNumberQuestion1Btn() {
         numberQuestion1Btn.setOnClickListener(v -> {
             String question = "What is the size of int data type in bytes";
             String answer = "4";
-            navigateToNumberSelectActivity(question, answer);
+            String trimmedTxt = answer.trim();
+            navigateToNumberSelectActivity(question, trimmedTxt);
         });
     }
 
@@ -242,10 +247,10 @@ public void handleTextQuestion3Btn(){
         startActivity(numberSelectIntent);
     }
 
-    public void navigateToTextQuestionActivity(String question, String answer){
-       Intent textQuestionActivityIntent = new Intent(this,TextQuestionActivity.class);
-       textQuestionActivityIntent.putExtra("question",question);
-       textQuestionActivityIntent.putExtra("answer",answer);
-       startActivity(textQuestionActivityIntent);
+    public void navigateToTextQuestionActivity(String question, String answer) {
+        Intent textQuestionActivityIntent = new Intent(this, TextQuestionActivity.class);
+        textQuestionActivityIntent.putExtra("question", question);
+        textQuestionActivityIntent.putExtra("answer", answer);
+        startActivity(textQuestionActivityIntent);
     }
 }

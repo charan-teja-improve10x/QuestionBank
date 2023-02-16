@@ -52,19 +52,18 @@ public class MultiSelectActivity extends AppCompatActivity implements IQuestions
 
     @Override
     public String getSelectedOptions() {
-        boolean selectedOption1 = optionOneCb.isChecked();
-        boolean selectedOption2 = optionTwoCb.isChecked();
-        boolean selectedOption3 = optionThreeCb.isChecked();
-        boolean selectedOption4 = optionFourCb.isChecked();
-        String result = " ";
-        if (selectedOption1 == true) {
+        String result = "";
+        if (optionOneCb.isChecked()) {
             result = "a";
-        } else if (selectedOption2 == true) {
-            result = "b";
-        } else if (selectedOption3 == true) {
-            result = "c";
-        } else if (selectedOption4 == true) {
-            result = "d";
+        }
+        if (optionTwoCb.isChecked()) {
+            result = result + "b";
+        }
+        if (optionThreeCb.isChecked()) {
+            result = result + "c";
+        }
+        if (optionFourCb.isChecked()) {
+            result = result + "d";
         }
         return result;
     }

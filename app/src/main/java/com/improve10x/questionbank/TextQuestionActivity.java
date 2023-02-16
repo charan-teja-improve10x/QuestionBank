@@ -28,30 +28,30 @@ public class TextQuestionActivity extends AppCompatActivity implements IQuestion
 
     @Override
     public void handleVerifyBtn() {
-      verifyBlankBtn.setOnClickListener(v -> {
-          verifyAnswer();
-      });
+        verifyBlankBtn.setOnClickListener(v -> {
+            verifyAnswer();
+        });
     }
 
     @Override
     public void verifyAnswer() {
-       String correctAnswer = getSelectedOptions();
-       if (answer.equalsIgnoreCase(correctAnswer)){
-           Toast.makeText(this, "Correct Answer", Toast.LENGTH_SHORT).show();
-       }else {
-           Toast.makeText(this, "Sorry, Wrong Answer", Toast.LENGTH_SHORT).show();
-       }
+        String correctAnswer = getSelectedOptions();
+        if (answer.equalsIgnoreCase(correctAnswer)) {
+            Toast.makeText(this, "Correct Answer", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Sorry, Wrong Answer", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
     public String getSelectedOptions() {
-       String enterdAnswer = answerTxt.getText().toString();
-       return enterdAnswer;
+        String enterdAnswer = answerTxt.getText().toString();
+        return enterdAnswer;
     }
 
     @Override
     public void displayQuestions() {
-     textQuestionTxt.setText(question);
+        textQuestionTxt.setText(question);
     }
 
     @Override
