@@ -127,7 +127,7 @@
                     android:id="@+id/fill_blank_2_btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Fill in blank two"
+                    android:text="Fill in the blank two"
                     android:textAllCaps="false" />
 
                 <Button
