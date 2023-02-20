@@ -134,7 +134,28 @@
                     android:id="@+id/fill_blank_3_btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="fill in the blank three"
+                    android:text="Fill in the blank three"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/spinner_one_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Spinner question 1"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/spinner_two_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Spinner question 2"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/spinner_thrre_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Spinner Question 3"
                     android:textAllCaps="false" />
             </LinearLayout>
         </ScrollView>

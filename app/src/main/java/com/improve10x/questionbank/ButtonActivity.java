@@ -22,6 +22,9 @@ public class ButtonActivity extends AppCompatActivity {
     Button fillInBlank1Btn;
     Button fillInBlank2Btn;
     Button fillInBlank3Btn;
+    Button spinner1Btn;
+    Button spinner2Btn;
+    Button spinner3Btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,48 @@ public class ButtonActivity extends AppCompatActivity {
         handleTextQuestion1Btn();
         handleTextQuestion2Btn();
         handleTextQuestion3Btn();
+        handleSpinner1Btn();
+        handleSpinner2Btn();
+        handleSpinner3Btn();
+    }
+
+    private void handleSpinner1Btn() {
+        spinner1Btn.setOnClickListener(v -> {
+            String question = "Number of primitive data types in java are ?";
+            String[] options = {"6", "7", "8", "9"};
+            String answer = "8";
+            navigateToSpinnerActivity(question, options, answer);
+        });
+    }
+
+    private void handleSpinner2Btn() {
+        spinner2Btn.setOnClickListener(v -> {
+            String question = "public class Solution{\n" +
+                    "       public static void main(String[] args){\n" +
+                    "                     byte x = 127;\n" +
+                    "                     x++;\n" +
+                    "                     x++;\n" +
+                    "                     System.out.print(x);\n" +
+                    "       }\n" +
+                    "}";
+            String[] options = {"-127", "127", "129", "2"};
+            String answer = "-127";
+            navigateToSpinnerActivity(question, options, answer);
+        });
+    }
+
+    private void handleSpinner3Btn() {
+        spinner3Btn.setOnClickListener(v -> {
+            String question = "Find the value of A[1] after execution of the following program.\n" +
+                    "\n" +
+                    "int[] A = {0,2,4,1,3};\n" +
+                    "for(int i = 0; i < a.length; i++){\n" +
+                    "    a[i] = a[(a[i] + 3) % a.length];\n" +
+                    "}";
+            String[] options = {"0", "1", "2", "3"};
+            String answer = "1";
+            navigateToSpinnerActivity(question, options, answer);
+        });
     }
 
     public void handleTextQuestion1Btn() {
@@ -220,6 +265,9 @@ public class ButtonActivity extends AppCompatActivity {
         fillInBlank1Btn = findViewById(R.id.fill_blank_1_btn);
         fillInBlank2Btn = findViewById(R.id.fill_blank_2_btn);
         fillInBlank3Btn = findViewById(R.id.fill_blank_3_btn);
+        spinner1Btn = findViewById(R.id.spinner_one_btn);
+        spinner2Btn = findViewById(R.id.spinner_two_btn);
+        spinner3Btn = findViewById(R.id.spinner_thrre_btn);
     }
 
     public void navigateToQuestionAndAnswersActivity(String question, String optionA, String optionB, String optionC, String optionD, String answer) {
@@ -252,5 +300,13 @@ public class ButtonActivity extends AppCompatActivity {
         textQuestionActivityIntent.putExtra("question", question);
         textQuestionActivityIntent.putExtra("answer", answer);
         startActivity(textQuestionActivityIntent);
+    }
+
+    public void navigateToSpinnerActivity(String question, String[] options, String answer) {
+        Intent spinnerActivityIntent = new Intent(this, SpinnerActivity.class);
+        spinnerActivityIntent.putExtra("question", question);
+        spinnerActivityIntent.putExtra("options", options);
+        spinnerActivityIntent.putExtra("answer", answer);
+        startActivity(spinnerActivityIntent);
     }
 }
